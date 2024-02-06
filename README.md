@@ -16,9 +16,11 @@
 3. **UIAlertController:**
    - Utilized `UIAlertController` to deliver personalized messages.
    - Customized alert styles to provide feedback and guide the user.
-  
-## Future Enhancements:
-- As I progress in my learning I'll probably implement sound effects and music and a live system to make the game more modern.
+ 
+
+
+### Future Enhancements:
+- As I progress in my learning I plan to implement sound effects, music and a live system to modernize the game.
 
 
 ---
