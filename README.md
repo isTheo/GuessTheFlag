@@ -1,7 +1,6 @@
 # Guess The Flag
 
-### This is my personal extension of Hacking With Swift project Guess The Flag.  
-### I've invested more time than I'd like to admit in developing this minimal app, but I've enjoyed experimenting with tools like UIButton, CALayer, and CGAffineTransform.
+### I've likely invested more time than necessary in this basic project, but I've enjoyed experimenting with tools such as UIButton, UIColor, CALayer, CGAffineTransform, setting up a timer, and customizing fonts.
 
 ## Key Components:
 
