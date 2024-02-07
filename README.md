@@ -2,7 +2,7 @@
 
 ### I've likely invested more time than necessary in this project, but I've enjoyed experimenting with tools such as `UIButton`, `UIColor`, `CALayer`, `CGAffineTransform`, setting up a timer, and customizing fonts.
 
-## What I have mainly worked on:
+### What I have mainly worked on:
 
 1. **UIButton:**
    - Implemented dynamic animations, shadows, and borders for a polished look.
