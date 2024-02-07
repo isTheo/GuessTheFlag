@@ -1,14 +1,14 @@
 # Guess The Flag
 
-I've likely invested more time than necessary in this basic project, but I've enjoyed experimenting with tools such as `UIButton`, `UIColor`, `CALayer`, `CGAffineTransform`, setting up a timer, and customizing fonts.
+I've likely invested more time than necessary in this project, but I've enjoyed experimenting with tools such as `UIButton`, `UIColor`, `CALayer`, `CGAffineTransform`, setting up a timer, and customizing fonts.
 
-## Key Components:
+## What I have mainly worked on:
 
-1. **Interactive UIButton:**
+1. **UIButton:**
    - Implemented dynamic animations, shadows, and borders for a polished look.
 
 2. **Timer integration:**
-   - Incorporated a countdown timer using Swift's `Timer` class.
+   - Incorporated a countdown timer using Swift's Timer class to add a competitive edge
 
 3. **UIAlertController:**
    - Utilized `UIAlertController` to deliver personalized messages.
@@ -16,7 +16,7 @@ I've likely invested more time than necessary in this basic project, but I've en
 
 
 ### Future Enhancements:
-- As I progress in my learning I plan to implement sound effects, music and a live system to modernize the game.
+- As I progress in my learning I plan to implement sound effects, music and a lives system to modernize the game.
 
 
 ---
