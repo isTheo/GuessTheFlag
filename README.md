@@ -1,6 +1,6 @@
 # Guess The Flag
 
-### I've likely invested more time than necessary in this project, but I've enjoyed experimenting with tools such as `UIButton`, `UIColor`, `CALayer`, `CGAffineTransform`, setting up a timer, and customizing fonts.
+#### I've likely invested more time than necessary in this project, but I've enjoyed experimenting with tools such as `UIButton`, `UIColor`, `CALayer`, `CGAffineTransform`, setting up a timer, and customizing fonts.
 
 ### What I have mainly worked on:
 
