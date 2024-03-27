@@ -1,5 +1,6 @@
 # Guess The Flag
 
+Project 2 from Hacking With Swift.
 
 - Learned about @2x and @3x images
 - Asset catalogs
