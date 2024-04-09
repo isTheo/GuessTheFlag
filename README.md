@@ -13,7 +13,6 @@ Also, I tried to do some customizations, such as setting up a timer, fonts, and 
 
 
 
-![Simulator Screen Recording - iPhone 14 - 2024-03-27 at 15 21 14](https://github.com/isTheo/GuessTheFlag-updated/assets/149708189/e76b0b10-ac87-402b-91ca-86fb5765b6c3) 
 
-
+![Simulator Screen Recording - iPhone 14 - 2024-04-09 at 20 45 21](https://github.com/isTheo/GuessTheFlag/assets/149708189/3101439f-451c-4f6f-b4f0-80d1b70b8882)
 
