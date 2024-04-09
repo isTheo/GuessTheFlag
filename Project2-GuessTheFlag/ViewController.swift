@@ -220,7 +220,7 @@ class ViewController: UIViewController {
         startTimer()
     }
     func restartGameButtonAlert() {
-        let restartAlert = UIAlertController(title: "Want to start a new game", message: nil, preferredStyle: .alert)
+        let restartAlert = UIAlertController(title: "Want to start a new game ?", message: nil, preferredStyle: .alert)
         
         restartAlert.addAction(UIAlertAction(title: "NO", style: .default))
         restartAlert.addAction(UIAlertAction(title: "YES", style: .destructive, handler: { (_) in
