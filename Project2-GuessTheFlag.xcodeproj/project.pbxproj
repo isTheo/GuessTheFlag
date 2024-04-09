@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95072E512BC06CF1000C1ADE /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95072E502BC06CF1000C1ADE /* correct.mp3 */; };
+		95072E532BC06E2C000C1ADE /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 95072E522BC06E2C000C1ADE /* wrong.mp3 */; };
+		95072E552BC2F81F000C1ADE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95072E542BC2F81F000C1ADE /* SecondViewController.swift */; };
 		9533B0152B5058FE00B57FFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533B0142B5058FE00B57FFB /* AppDelegate.swift */; };
 		9533B0172B5058FE00B57FFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533B0162B5058FE00B57FFB /* SceneDelegate.swift */; };
 		9533B0192B5058FE00B57FFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533B0182B5058FE00B57FFB /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95072E502BC06CF1000C1ADE /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		95072E522BC06E2C000C1ADE /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong.mp3; sourceTree = "<group>"; };
+		95072E542BC2F81F000C1ADE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9533B0112B5058FE00B57FFB /* Project2-GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project2-GuessTheFlag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9533B0142B5058FE00B57FFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9533B0162B5058FE00B57FFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,11 +67,14 @@
 				9533B0142B5058FE00B57FFB /* AppDelegate.swift */,
 				9533B0162B5058FE00B57FFB /* SceneDelegate.swift */,
 				9533B0182B5058FE00B57FFB /* ViewController.swift */,
+				95072E542BC2F81F000C1ADE /* SecondViewController.swift */,
 				9533B01A2B5058FE00B57FFB /* Main.storyboard */,
 				9533B01D2B50590000B57FFB /* Assets.xcassets */,
 				9533B01F2B50590000B57FFB /* LaunchScreen.storyboard */,
 				9533B0222B50590000B57FFB /* Info.plist */,
 				954F0F1C2B66CD4A009F625F /* You Blockhead.ttf */,
+				95072E502BC06CF1000C1ADE /* correct.mp3 */,
+				95072E522BC06E2C000C1ADE /* wrong.mp3 */,
 			);
 			path = "Project2-GuessTheFlag";
 			sourceTree = "<group>";
@@ -129,8 +138,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9533B0212B50590000B57FFB /* LaunchScreen.storyboard in Resources */,
+				95072E512BC06CF1000C1ADE /* correct.mp3 in Resources */,
 				9533B01E2B50590000B57FFB /* Assets.xcassets in Resources */,
 				9533B01C2B5058FE00B57FFB /* Main.storyboard in Resources */,
+				95072E532BC06E2C000C1ADE /* wrong.mp3 in Resources */,
 				954F0F1D2B66CD4A009F625F /* You Blockhead.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95072E552BC2F81F000C1ADE /* SecondViewController.swift in Sources */,
 				9533B0192B5058FE00B57FFB /* ViewController.swift in Sources */,
 				9533B0152B5058FE00B57FFB /* AppDelegate.swift in Sources */,
 				9533B0172B5058FE00B57FFB /* SceneDelegate.swift in Sources */,
@@ -302,8 +314,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,8 +342,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
