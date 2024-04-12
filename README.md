@@ -2,18 +2,17 @@
 
 Project 2 from Hacking With Swift.
 
-- Learned about @2x and @3x images
-- Asset catalogs
-- UIButton, CALayer, UIColor
-- UIAlertController
+***Learned about:***
+- Assets and @2x/@3x images
+- `UIButton`, `CALayer`, `UIColor`
+- `UIAlertController`
+- Animations effect with `CGAffineTransform`
+- Implemented `UserDefaults` so now it saves the player’s highest score
 
-I've enjoyed experimenting with `UIButton`, `UIColor`, `CALayer`.  
-Also, I tried to do some customizations, such as setting up a timer, fonts, and animations for buttons using `CGAffineTransform`.
- 
+Also I tried to do some customizations such as adding custom fonts and setting up a timer.
 
+## Extra:
+- Added a new view that shows the Leaderboards
+- Added sounds through `AVFoundation` for correct and wrong answer
 
-
-![Simulator Screen Recording - iPhone 14 - 2024-03-27 at 15 21 14](https://github.com/isTheo/GuessTheFlag-updated/assets/149708189/e76b0b10-ac87-402b-91ca-86fb5765b6c3) 
-
-
-
+https://github.com/isTheo/GuessTheFlag/assets/149708189/d56ab38b-c2a1-4f3c-bd5a-050527c4af83 
