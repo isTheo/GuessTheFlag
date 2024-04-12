@@ -9,10 +9,10 @@ import UIKit
 
 class SecondViewController: UIViewController {
         
-    var currentScore = 0
+    var highScore = 0
     
     var leaderBoard: UILabel!
-    var highScore: UILabel!
+    var highScoreLabel: UILabel!
     var secondScore: UILabel!
     var thirdScore: UILabel!
     
@@ -42,23 +42,23 @@ class SecondViewController: UIViewController {
         leaderBoard.shadowOffset = CGSize(width: 0, height: 3)
         
         //highestScore Label
-        highScore = UILabel()
-        highScore.translatesAutoresizingMaskIntoConstraints = false
-        highScore.text = "Highest score: \(currentScore)"
-        highScore.font = UIFont(name: "Supercell-Magic", size: 15.0)
-        highScore.textColor = UIColor(red: 254/255, green: 253/255, blue: 212/255, alpha: 1)
-        highScore.shadowColor = UIColor(red: 127/255, green: 54/255, blue: 19/255, alpha: 1)
-        highScore.shadowOffset = CGSize(width: 0, height: 3)
+        highScoreLabel = UILabel()
+        highScoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        highScoreLabel.text = "Highest score: \(highScore)"
+        highScoreLabel.font = UIFont(name: "Supercell-Magic", size: 15.0)
+        highScoreLabel.textColor = UIColor(red: 254/255, green: 253/255, blue: 212/255, alpha: 1)
+        highScoreLabel.shadowColor = UIColor(red: 127/255, green: 54/255, blue: 19/255, alpha: 1)
+        highScoreLabel.shadowOffset = CGSize(width: 0, height: 3)
         
         view.addSubview(leaderBoard)
-        view.addSubview(highScore)
+        view.addSubview(highScoreLabel)
         
         
         NSLayoutConstraint.activate([
             leaderBoard.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 20),
             leaderBoard.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-            highScore.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 110),
-            highScore.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            highScoreLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 110),
+            highScoreLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             
         ])
     }

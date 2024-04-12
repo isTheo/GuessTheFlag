@@ -26,11 +26,12 @@ class ViewController: UIViewController {
     
     var countries = [String]()
     var currentScore = 0
+    var highScore = 0
     var correctAnswer = 0
     var isGameActive = false
     var isTimerActive = false
     var timer: Timer?
-    var secondsRemaining = 30
+    var secondsRemaining = 0
     var isAlertPresented = false
     
     
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         currentScore = UserDefaults.standard.integer(forKey: "currentScore")
+        highScore = currentScore
         
         saveScore()
         setupUI()
@@ -92,13 +94,13 @@ class ViewController: UIViewController {
         flagButton3.layer.shadowRadius = 10.0
         flagButton3.layer.masksToBounds = false
         
-        restartButton.addTarget(self, action: #selector(button4TouchDown), for: .touchDown)
-        restartButton.addTarget(self, action: #selector(button4TouchUp), for: .touchUpInside)
-        restartButton.addTarget(self, action: #selector(button4TouchUp), for: .touchUpOutside)
+        restartButton.addTarget(self, action: #selector(restartButtonTouchDown), for: .touchDown)
+        restartButton.addTarget(self, action: #selector(restartButtonTouchUp), for: .touchUpInside)
+        restartButton.addTarget(self, action: #selector(restartButtonTouchUp), for: .touchUpOutside)
         
-        playButton.addTarget(self, action: #selector(button5TouchDown), for: .touchDown)
-        playButton.addTarget(self, action: #selector(button5TouchUp), for: .touchUpInside)
-        playButton.addTarget(self, action: #selector(button5TouchUp), for: .touchUpOutside)
+        playButton.addTarget(self, action: #selector(playButtonTouchDown), for: .touchDown)
+        playButton.addTarget(self, action: #selector(playButtonTouchUp), for: .touchUpInside)
+        playButton.addTarget(self, action: #selector(playButtonTouchUp), for: .touchUpOutside)
         
         leaderboardButton.setTitle("Leaderboard", for: .normal)
         leaderboardButton.titleLabel?.font = UIFont(name: "Supercell-Magic", size: 15.0)
@@ -122,22 +124,22 @@ class ViewController: UIViewController {
     
     
     
-    @objc func button4TouchDown() {
+    @objc func restartButtonTouchDown() {
         UIView.animate(withDuration: 0.1) {
             self.restartButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         }
     }
-    @objc func button4TouchUp() {
+    @objc func restartButtonTouchUp() {
         UIView.animate(withDuration: 0.1) {
             self.restartButton.transform = CGAffineTransform.identity
         }
     }
-    @objc func button5TouchDown() {
+    @objc func playButtonTouchDown() {
         UIView.animate(withDuration: 0.1) {
             self.playButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         }
     }
-    @objc func button5TouchUp() {
+    @objc func playButtonTouchUp() {
         UIView.animate(withDuration: 0.1) {
             self.playButton.transform = CGAffineTransform.identity
         }
@@ -154,7 +156,7 @@ class ViewController: UIViewController {
     }
     
     func handleRightAnswer(button: UIButton) {
-        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.2, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.2, animations: {
             button.transform = CGAffineTransform(scaleX: 2.3, y: 2.3)
         })
         button.transform = .identity
@@ -202,7 +204,7 @@ class ViewController: UIViewController {
         }
     }
     func startGameButtonAlert() {
-        let startAlert = UIAlertController(title: "Get ready! \n You have 45 seconds to answer each question.", message: "", preferredStyle: .alert)
+        let startAlert = UIAlertController(title: "Get ready! \n You have 30 seconds to answer each question.", message: "", preferredStyle: .alert)
         startAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
             self.askQuestion()
             self.startGame()
@@ -215,7 +217,7 @@ class ViewController: UIViewController {
     func restartGame(action: UIAlertAction! = nil) {
         currentScore = 0
         askQuestion()
-        secondsRemaining = 5
+        secondsRemaining = 30
         updateTimerLabel()
         startTimer()
     }
@@ -278,7 +280,7 @@ class ViewController: UIViewController {
     
     @IBAction func leaderBoardButtonTapped(_ sender: UIButton) {
         let secondController = storyboard!.instantiateViewController(withIdentifier: "LeaderBoardViewController") as! SecondViewController
-        secondController.currentScore = self.currentScore
+        secondController.highScore = self.highScore
         
         self.present(secondController, animated: true, completion: nil)
     }
@@ -312,14 +314,26 @@ class ViewController: UIViewController {
     }
     
     func timeUpAlert() {
-        let alert = UIAlertController(title: "Time's Up! \n Your final score is \(currentScore). \n Can you do better next time ?", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
         timer?.invalidate()
         disableFlagButtons()
         headerLabel.text = "Guess the flag"
+        scoreLabel.text = "Score: "
         
-        saveScore()
+        if currentScore > highScore {
+            // Se il punteggio corrente supera l'high score, mostra un alert personalizzato
+            let newHighScoreAlert = UIAlertController(title: "Congratulations!", message: "You've beaten your previous high score!", preferredStyle: .alert)
+            newHighScoreAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                // Salva il nuovo high score
+                self.highScore = self.currentScore
+                self.saveScore()
+            }))
+            present(newHighScoreAlert, animated: true, completion: nil)
+        } else {
+            // Se il punteggio corrente non supera l'high score, mostra un alert standard
+            let alert = UIAlertController(title: "Time's Up!", message: "Your final score is \(currentScore). Can you do better next time?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -340,6 +354,12 @@ class ViewController: UIViewController {
     }
     
     
+    func updateScore(newScore: Int) {
+        if newScore > highScore {
+            highScore = newScore
+            scoreLabel.text = "High Score: \(highScore)"
+        }
+    }
     
     
 }
